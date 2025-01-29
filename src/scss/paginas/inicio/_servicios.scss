@@ -1,0 +1,38 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.servicios {
+    @include m.contenedor;
+    &__contenedor {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include m.desktop {
+            flex-direction: row;
+            justify-content: space-evenly;
+            gap: 1.5rem;
+        }
+    }
+}
+.servicio {
+    background-color: v.$secundario;
+    padding: 3rem;
+    border-radius: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    max-width: auto;
+    margin-bottom: 2rem;
+    &__icono {
+        font-size: 4rem;
+        background-color: v.$blanco;
+        border-radius: 40%;
+        padding: 3rem;
+    }
+    &__texto {
+        text-transform: uppercase;
+        font-weight: v.$bold;
+        font-size: 2rem;
+    }
+}

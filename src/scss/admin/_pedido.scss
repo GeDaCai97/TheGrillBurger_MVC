@@ -1,0 +1,41 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.pedido {
+    @include m.shadow;
+    background-color: v.$negro-solid;
+    padding: 2rem;
+    border-radius: 1rem;
+    &__grid {
+        @include m.grid(1, 5rem);
+        @include m.tablet {
+            @include m.grid(2, 3rem);
+        }
+        @include m.desktop {
+            @include m.grid(3, 3rem);
+        }
+    }
+    &__articulo {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem;
+        &-texto--cantidad {
+            padding: 0 4rem;
+        }
+    }
+    &__descripcion {
+        @include m.desktop {
+            @include m.grid(2, 1rem);
+        }
+    }
+    &__texto {
+        margin: 0;
+    }
+    &__span {
+        font-weight: v.$bold;
+    }
+    &__precio-texto {
+        text-align: center;
+        margin-top: 6rem;
+    }
+}

@@ -1,0 +1,46 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.perfil {
+    @include m.contenedor-sm;
+    @include m.tablet {
+        @include m.contenedor-md;
+    }
+    @include m.desktop {
+        @include m.contenedor;
+    }
+    &__grid {
+        padding: 5rem;
+        @include m.desktop {
+            @include m.grid(2, 5rem);
+        }
+    }
+    &__formulario {
+        margin-bottom: 5rem;
+    }
+    &__lista-domicilio {
+        @include m.reset-lista;
+    }
+    &__elemento-lista {
+        color: v.$blanco;
+        text-transform: uppercase;
+        font-size: 1.8rem;
+        margin-bottom: 3rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__span {
+        color: v.$secundario;
+        font-weight: bold;
+    }
+    &__hr {
+        margin-top: 5rem;
+    }
+}
+.mas-info {
+    color: v.$azul;
+    &:hover {
+        cursor: pointer;
+    }
+}

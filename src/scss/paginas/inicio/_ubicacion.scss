@@ -1,0 +1,51 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.ubicacion {
+    @include m.contenedor;
+    &__heading {
+        text-transform: uppercase;
+    }
+    &__descripcion {
+        font-weight: v.$bold;
+    }
+    &__contenedor {
+        background-color: v.$secundario;
+        padding: 2rem;
+        border-radius: 1rem;
+        @include m.tablet {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 3rem;
+        }
+    }
+    &__texto {
+        font-weight: v.$black;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 2.8rem;
+        margin-bottom: 5rem;
+    }
+    .fa-location-dot {
+        font-size: 3rem;
+    }
+    &__texto--direccion {
+        font-size: 2rem;
+        text-align: center;
+        font-weight: v.$bold;
+    }
+    &__mapa--contenedor {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__mapa {
+        width: 30rem;
+        height: 15rem;
+        @include m.desktop {
+            width: 60rem;
+            height: 45rem;
+        }
+    }
+}

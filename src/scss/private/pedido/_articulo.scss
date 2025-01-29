@@ -1,0 +1,148 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.articulo-menu {
+    background-color: v.$secundario;
+    border-radius: 3rem;
+    width: auto;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    @include m.tablet {
+        margin-bottom: 0;
+    }
+    &__nombre {
+        margin: 1rem 0;
+    }
+    &--imagen {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+        @include m.desktop {
+            justify-content: space-evenly;
+            flex-direction: row;
+        }
+    }
+    &__imagen {
+        min-width: 15rem;
+        max-width: 18rem;
+        overflow: hidden;
+        border-radius: 1rem;
+    }
+    &__descripcion {
+        margin-bottom: 1rem;
+    }
+    &__datos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__precio {
+        font-weight: v.$black;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: v.$blanco;
+        &--p {
+            @extend .articulo-menu__precio;
+        }
+        &--total {
+            @extend .articulo-menu__precio;
+            margin: 0 6rem 0 0;
+            text-align: right;
+        }
+    }
+    &__nombre {
+        font-weight: v.$bold;
+        font-size: 2.6rem;
+        text-transform: uppercase;
+        text-align: center;
+        color: v.$blanco;
+    }
+    &__datos,
+    &__extras-contenedor {
+        color: v.$blanco;
+    }
+    &__extras-titulo {
+        margin: 1rem 0;
+    }
+    &__extras-contenido {
+        @include m.grid(2, 1rem);
+        margin: 2rem 0;
+    }
+    &__extra {
+        padding: 1rem;
+        border-radius: 1rem;
+        border: 3px solid darken(v.$gris-oscuro, 30);
+        text-align: center;
+        font-weight: v.$bold;
+        font-size: 1.8rem;
+        &:hover {
+            cursor: pointer;
+        }
+        &--disabled {
+            background-color: rgba(0,0,0,0.3);
+            &:hover {
+                cursor: not-allowed;
+            }
+        }
+    }
+    &__contenedor-form {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: space-between;
+    }
+    &__agregar {
+        @include m.boton(v.$azul, v.$blanco);
+        white-space: nowrap;
+        border-radius: .5rem;
+        padding: .5rem 1rem;
+        &:disabled {
+            cursor: not-allowed;
+            background-color: darken(v.$azul, 20);
+        }
+    }
+
+
+    &--agregado {
+        @extend .articulo-menu;
+        margin-bottom: 3rem;
+    }
+    &__contenedor {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    &__eliminar {
+        all: unset;
+        background-color: v.$rojo;
+        padding: 1rem;
+        border-radius: .5rem;
+        height: 1.5rem;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+.formulario-articulo {
+    &__label {
+        color: v.$blanco;
+    }
+    &__campo {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    &__input {
+        max-width: 6rem;
+        border: none;
+        background-color: v.$negro;
+        color: v.$blanco;
+        padding: 1rem;
+        border-radius: .5rem;
+    }
+}

@@ -1,0 +1,77 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.combo {
+    background-color: v.$gris-oscuro;
+    padding: 2rem;
+    border-radius: 3rem;
+    margin: 5rem 0;
+    @include m.tablet {
+        margin: 0;
+    }
+    &__grid {
+        @include m.tablet {
+            @include m.grid(2, 2rem);
+        }
+        @include m.desktop {
+            @include m.grid(3, 3rem);
+        }
+    }
+    &__contenedor {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__descripcion,
+    &__texto {
+        margin: 0;
+    }
+    &__precio-texto {
+        font-weight: v.$black;
+        font-size: 3rem;
+    }
+    &__formulario {
+        width: 100%;
+    }
+    &__acciones {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    &__accion {
+        all: unset;
+        display: inline-block;
+        width: 100%;
+        text-transform: uppercase;
+        font-size: 1.6rem;
+        color: v.$blanco;
+        text-align: center;
+        padding: 1rem 0;
+        font-weight: v.$bold;
+        transition-property: background-color;
+        transition-duration: .3s;
+        &--editar {
+            background-color: v.$azul;
+            &:hover {
+                background-color: darken(v.$azul, 10);
+            }
+        }
+        &--contenido {
+            background-color: v.$verde;
+            &:hover {
+                background-color: darken(v.$verde, 10);
+            }
+        }
+        &--eliminar {
+            background-color: v.$rojo;
+            &:hover {
+                background-color: darken(v.$rojo, 10);
+            }
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    
+}

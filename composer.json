@@ -1,0 +1,24 @@
+{
+    "name": "carar/the-grill-burger_mvc",
+    "description": "Proyecto PHP8, SQL, MVC",
+    "type": "project",
+    "authors": [
+        {
+            "name": "GeDaCai97",
+            "email": "car.ar.16@hotmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.9",
+        "vlucas/phpdotenv": "^5.6",
+        "intervention/image": "^3.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Model\\" : "./models",
+            "MVC\\" : "./",
+            "Controllers\\" : "./controllers",
+            "Classes\\" : "./classes"
+        }
+    }
+}

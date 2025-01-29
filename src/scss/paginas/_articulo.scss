@@ -1,0 +1,42 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.menu-articulo {
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 1px solid lighten(v.$negro-solid, 30%);
+    margin: 5rem 0;
+    &:last-child {
+        margin: 5rem 0 0 0;
+    }
+    @include m.tablet {
+        margin: 0;
+        &:last-child {
+            margin: 0;
+        }
+    }
+    &__titulo {
+        font-weight: v.$bold;
+        color: v.$blanco;
+        font-size: 2rem;
+        text-align: center;
+    }
+    &__descripcion {
+        color: v.$gris-claro;
+    }
+    &__precio {
+        display: inline-block;
+        color: v.$blanco;
+        font-size: 3rem;
+        padding: 2rem;
+        font-weight: v.$black;
+        width: 100%;
+        text-align: center;
+    }
+    &__imagen {
+        max-width: 22rem;
+    }
+    &--nogrid {
+        display: block;
+    }
+}
